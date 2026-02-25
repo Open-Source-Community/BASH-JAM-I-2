@@ -1,2 +1,7 @@
 # BASH-JAM-I-2
-This is a BASH-Scripting jam for OSC-Linux'26 members, where each member is required to write a useful tool using bash scripting. 
+Collection of simple bash scripts written in a week by the team members.
+This is BASH-JAM Version One.
+  - BASH-JAM is an idea to practice bash scripting in a competetive way, where you have to create a useful tool in a limited time.
+  - BASH-JAM version 2 is for OSC-Linux members only.
+  - I hope the next versions will have more contributions, which will be public for everyone who sees the beauty of bash.
+
