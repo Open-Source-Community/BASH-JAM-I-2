@@ -8,18 +8,18 @@ This is BASH-JAM Version One.
 
 ## How to Contribute ?
 
-    - choose an idea from this [sugges-idea-list.md](./suggest-idea-list.md) 
+  - choose an idea from this [sugges-idea-list.md](./suggest-idea-list.md) 
 
-    - you can choose any other idea but you have to write it in the ideas file in the same format.
+  - you can choose any other idea but you have to write it in the ideas file in the same format.
 
-    - Write the bash script
+  - Write the bash script
 
-    - beside the script create a README.md file describing the script input/output/usage/ what does the script do and your name as a hyberlink to your github account
+  - beside the script create a README.md file describing the script input/output/usage/ what does the script do and your name as a hyberlink to your github account
 
-    - put the script and readme file in a directory
+  - put the script and readme file in a directory
 
-    - push it to this repo
+  - push it to this repo
 
-    - if you want to add an idea description, update this file and create a pull request
+  - if you want to add an idea description, update this file and create a pull request
 
 
