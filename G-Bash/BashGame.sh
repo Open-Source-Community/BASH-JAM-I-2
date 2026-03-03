@@ -259,7 +259,10 @@ function passwordPlayerOneValidation
   do
     read -sp "$name1 enter your password (it cannot start with 0):" pass1
         echo -e "\n"
-
+      if [[ ! "$pass1" =~ ^[0-9]+$ ]]; then
+        echo -e "\t invalid input plz enter a number bet [1000,9999]\n"
+        continue
+        fi
 
       if [[ $pass1 -lt $minPassLimit ]]
             then
@@ -283,6 +286,10 @@ function passwordPlayerTwoValidation
 
     read -sp "$name2 enter your password (it cannot start with 0): " pass2
         echo -e "\n"
+         if [[ ! "$pass2" =~ ^[0-9]+$ ]]; then
+        echo -e "\t invalid input plz enter a number bet [1000,9999]"
+        continue
+        fi
       if [[ $pass2 -lt $minPassLimit ]]
           then
             echo -e "\t--> the password is small than 4 numbers pls enter a valid one"
@@ -303,13 +310,19 @@ function passwordGamePlay
     do
         counter1=0
         counter2=0
-        tmpPass1=$pass1
-        tmpPass2=$pass2
+        tmpPass2=$pass1
+        tmpPass1=$pass2
 
       if [[ $playerturn -eq 1 ]]
           then
-              echo  "--$name1 enter the password guess "
+              echo  "--$name1 Guess $name2's password  "
               read guesspass1
+
+               if [[ ! "$guesspass1" =~ ^[0-9]+$ ]]; then
+                  echo -e "\t invalid input plz enter a number bet [1000,9999]"
+                  continue
+               fi
+
                  if [[ $guesspass1 -lt $minPassLimit ]]
               then
                 echo -e "\t--> the guessed password is small than 4 numbers pls enter a valid one"
@@ -334,7 +347,8 @@ function passwordGamePlay
 
   if [[ $counter1 -eq 4 ]]
     then
-          echo -e "\t\t\t$name1 HAS WON. THE PASSWORD IS $pass1 GOOD GUESS :)\n"
+          echo -e "\t\t\t$name1 HAS WON. THE PASSWORD IS $pass2 GOOD GUESS :)\n"
+          echo -e "\t\t\t$name1 password is $pass1 and $name2 password is $pass2 "
           break
           else
              echo -e "--- wrong password. $name1 gussed $counter1 numbers right\n"
@@ -343,8 +357,14 @@ function passwordGamePlay
 
 
     else
-        echo  "--$name2 enter the password guess "
+        echo  "--$name2 Guess $name1's password "
           read guesspass2
+
+              if [[ ! "$guesspass2" =~ ^[0-9]+$ ]]; then
+                  echo -e "\t invalid input plz enter a number bet [1000,9999]"
+                  continue
+               fi
+
                 if [[ $guesspass2 -lt 1000 ]]
                     then
                       echo -e "\t--> the guessed password is small than 4 numbers pls enter a valid one"
@@ -372,7 +392,8 @@ function passwordGamePlay
 
   if [[ $counter2 -eq 4 ]]
   then
-    echo -e "\t\t\t$name2 HAS WON. THE PASSWORD IS $pass2 GOOD GUESS :)\n"
+    echo -e "\t\t\t$name2 HAS WON. THE PASSWORD IS $pass1 GOOD GUESS :)\n"
+     echo -e "\t\t\t$name1 password is $pass1 and $name2 password is $pass2 "
     break
     else
        echo -e "--- wrong password. $name2 gussed $counter2 numbers right\n"
