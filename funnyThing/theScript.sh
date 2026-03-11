@@ -60,7 +60,7 @@ randFile=${files[$(($RANDOM % ${#files[@]}))]}
     --osd-level=0 \
     --cursor-autohide=no \
     --input-conf=/dev/null \
-    --image-display-duration=10 \
+    --image-display-duration=15 \
     $randDir/$randFile
 
 echo "$randDir"
