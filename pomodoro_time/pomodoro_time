@@ -1,0 +1,27 @@
+#!/bin/bash
+countdown(){
+seconds=$1
+while [ $seconds -gt 0 ]
+do
+min=$((seconds/60))
+secs=$((seconds%60))
+clear
+if [ ! -z "$2" ]; then
+figlet "$2" | lolcat
+fi
+
+figlet "$min:$secs" | lolcat
+sleep 1
+seconds=$((seconds-1))
+done
+}
+while true
+do
+title="WORK!"
+countdown 1500 "$title"
+notify-send "Work session finished! Take a break."
+title="BREAK!"
+countdown 300 "$title"
+notify-send "Break finished! Back to work."
+done
+
