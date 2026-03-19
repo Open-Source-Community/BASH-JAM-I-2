@@ -1,0 +1,82 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun,filebrowser,window";
+    show-icons:                 false;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w}: {c}";
+    hover-select: false;
+    click-to-exit: false; 
+}
+
+/*****----- Global Properties -----*****/
+* 
+{
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #131D1F;
+    background-alt:              #183A43;
+    foreground:                  #FFFFFF;
+    selected:                    #649094;
+    active:                      #E9CC9D;
+    urgent:                      #fea862ff;
+    
+}
+
+window {
+    border-radius:    20px;
+    width:            470px;
+    height:           400px;
+    location:         northeast;
+    anchor:           northeast;
+    fullscreen:       false;
+    background-color: rgba(0,0,0,0.8);}
+
+mainbox {
+    background-color: transparent;
+    expand:           true;
+    
+}
+/*****----- Main Box -----*****/
+inputbar {
+    enabled: false;
+  }
+
+/*****----- Elements -----*****/
+element {
+    cursor:        pointer;
+    spacing: 2px;      
+    padding: 5px 15px;
+    border:           0px;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: rgba(255,255,255,0.3);
+}
+element-text {
+    font: "JetBrains Mono bold 27";
+    wrap: true;
+    horizontal-align: 0.1;
+    vertical-align: 0.5;
+    text-color:       rgba(56, 66, 68, 1);
+
+    background-color: transparent;
+
+}
+listview {
+    spacing:          0px;
+    border:           0px;
+        border-radius: 20px;
+    background-image: url("prayerTimes&Azkar-Sondos/Roficonfig/images/img.jpg", width);
+    background-color: rgba(0,0,0,0.8);    
+}
