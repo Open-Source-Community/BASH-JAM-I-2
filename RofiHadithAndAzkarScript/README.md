@@ -9,6 +9,9 @@ A lightweight Bash script for Linux users to display random Hadiths or azkar rem
 
 ![Screenshot](/RofiHadithAndAzkarScript/screenshot.png)
 
+
+<img width="907" height="222" alt="HadithShot" src="https://github.com/user-attachments/assets/37327048-c7fd-41ff-b174-a6a8c228885c" />
+
 ## 🛠️ Prerequisites
 You need to have `rofi` and `libnotify` installed on your system.
 ```bash
