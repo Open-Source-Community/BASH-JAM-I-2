@@ -50,3 +50,22 @@ Input: None
 Output: A meme that appears on the top-right corner of the screen
 
 NOTE: This idea was meant to be originally used with crontabs to display memes every 5 minutes but unfortunately running a GUI app with crontabs is very complicated
+
+---
+Idea Name: Battery Alert (Rofi-based)
+
+By: [Shahd Sameh](https://github.com/SH-AHD)
+
+Describe the idea: A critical safety script designed for laptops with severely degraded batteries. The script acts as a "Software UPS" by monitoring battery levels in real-time and triggering a highly intrusive, unmissable Rofi-based GUI alert when the charger is disconnected, or the battery hits a critical threshold. This prevents abrupt power loss, which is essential for protecting NVMe SSDs from controller failure and data corruption (especially when the kernel is unstable).
+
+Input: * Real-time battery percentage and AC adapter status (via acpi).
+
+Customizable threshold (e.g., 60% due to rapid battery drain).
+
+User interaction to dismiss the Rofi alert.
+
+Output: * A persistent, centered GUI popup (Rofi) that stays on top of all windows.
+ 
+Immediate visual warning to plug in the charger.
+
+Protection of the unsafe_shutdowns count on the NVMe drive.
