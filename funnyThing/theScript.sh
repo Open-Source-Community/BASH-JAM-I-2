@@ -15,15 +15,26 @@ chmod u+rwx $currentDir/theScript.sh # Makes sure that the user has execute perm
 # crontab -l 2>/dev/null | grep "$currentDir/theScript.sh"
 echo "$currentDir"
 
-# Makes an array of the directories in the root directory (if a visible non-directory exists in the root directory this part breaks)
 dirs=()
-for dir in */; do
-    dir=${dir%/}
+if [[ -z $1 ]]; then
+    # Makes an array of the directories in the root directory
+    for dir in */; do
+        dir=${dir%/}
 
-    if [ "$(ls -F $dir | grep '[^/]$' | wc -l)" -gt 0 ]; then
-        dirs+=("$dir")
-    fi
-done
+        if [ "$(ls -F $dir | grep '[^/]$' | wc -l)" -gt 0 ]; then
+            dirs+=("$dir")
+        fi
+    done
+else
+    # Makes an array of the directories specified in the positional parameters (exclusing the ones that contain no files)
+    for dir in $@; do
+        dir=${dir%/}
+
+        if [ "$(ls -F $dir | grep '[^/]$' | wc -l)" -gt 0 ]; then
+            dirs+=("$dir")
+        fi
+    done
+fi
 
 # Chooses a random directory from the dirs array
 randDir=${dirs[$(($RANDOM % ${#dirs[@]}))]}
@@ -49,7 +60,7 @@ randFile=${files[$(($RANDOM % ${#files[@]}))]}
     --osd-level=0 \
     --cursor-autohide=no \
     --input-conf=/dev/null \
-    --image-display-duration=10 \
+    --image-display-duration=15 \
     $randDir/$randFile
 
 echo "$randDir"
