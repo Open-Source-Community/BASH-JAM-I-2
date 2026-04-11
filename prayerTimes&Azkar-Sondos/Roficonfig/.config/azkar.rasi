@@ -1,0 +1,85 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun,filebrowser,window";
+    show-icons:                 false;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w}: {c}";
+    hover-select: false;
+    click-to-exit: false; 
+}
+
+/*****----- Global Properties -----*****/
+* 
+{
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #131D1F;
+    background-alt:              #183A43;
+    foreground:                  #FFFFFF;
+    selected:                    #649094;
+    active:                      #E9CC9D;
+    urgent:                      #fea862ff;
+    
+}
+window {
+    border-radius:    20px;
+    width:            700px;
+    height:           50px;
+    location:         north;
+    anchor:           north;
+    y-offset: 3%;
+    fullscreen:       false;
+    background-color: transparent;
+}
+
+mainbox {
+    background-color: transparent;
+    expand:           true;
+    
+    
+}
+/*****----- Main Box -----*****/
+inputbar {
+    enabled: false;
+  }
+
+/*****----- Elements -----*****/
+element {
+    cursor:        pointer;
+    orientation:   vertical;
+    spacing: 2px;      
+    padding: 20px 35px;
+    background-color: transparent;
+    border:           0px;
+    border-radius:    0px;
+    padding: 0px 2px;
+
+    
+}
+element-text {
+    font: "Noto Sans bold 26";
+    wrap: true;
+    horizontal-align: 5px;
+    vertical-align: 0.5;
+    text-color:       rgba(203, 233, 238, 1);
+    background-color: transparent;
+
+}
+listview {
+    background-color:rgba(88, 104, 117, 70%);
+    spacing:          0px;
+    border:           0px;
+    
+}
